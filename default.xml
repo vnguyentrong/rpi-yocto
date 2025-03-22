@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest>
+    <!-- Remote repositories definition -->
+    <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+    <remote name="oe" fetch="https://github.com/openembedded"/>
+    <remote name="github.vnguyentrong" fetch="git@github.com:vnguyentrong"/>
+    <remote name="freedesktop.vnguyentrong" fetch="https://gitlab.freedesktop.org/vnguyentrong"/>
+    <remote name="freedesktop" fetch="https://gitlab.freedesktop.org/wayland"/>
+
+    <!-- Upstream Yocto & OpenEmbedded Projects -->
+    <project name="poky" path="poky" remote="yocto" revision="master" clone-depth="1"/>
+    <project name="meta-raspberrypi" path="meta-raspberrypi" remote="yocto" revision="master"/>
+
+    <project name="meta-openembedded" path="meta-openembedded" remote="oe" revision="master" clone-depth="1"/>
+
+    <project name="linux-rpi" path="linux-rpi" remote="github.vnguyentrong" revision="rpi-6.6.y" clone-depth="1"/>
+    <project name="icode" path="icode" remote="github.vnguyentrong" revision="master.icode"/>
+    <project name="wayland-ivi-extension" path="wayland-ivi-extension" remote="github.vnguyentrong" revision="master"/>
+
+    <project name="wayland" path="wayland" remote="freedesktop" revision="main"/>
+
+    <project name="weston" path="weston" remote="freedesktop.vnguyentrong" revision="main"/>
+    <project name="gstreamer" path="gstreamer" remote="freedesktop.vnguyentrong" revision="main" clone-depth="1"/>
+
+</manifest>
