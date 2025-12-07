@@ -1,25 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <manifest>
     <!-- Remote repositories definition -->
-    <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+    <remote name="yoctoproject" fetch="https://git.yoctoproject.org/"/>
     <remote name="oe" fetch="https://github.com/openembedded"/>
     <remote name="github.vnguyentrong" fetch="git@github.com:vnguyentrong"/>
     <remote name="freedesktop.vnguyentrong" fetch="https://gitlab.freedesktop.org/vnguyentrong"/>
     <remote name="freedesktop" fetch="https://gitlab.freedesktop.org/wayland"/>
+    <remote name="raspberrypi" fetch="https://github.com/agherzan/meta-raspberrypi.git"/>
+
+    
+    <!-- <remote name="ros" fetch="https://github.com/ros"/> -->
 
     <!-- Upstream Yocto & OpenEmbedded Projects -->
-    <project name="poky" path="poky" remote="yocto" revision="master" clone-depth="1"/>
-    <project name="meta-raspberrypi" path="meta-raspberrypi" remote="yocto" revision="master"/>
+    <project name="meta-yocto" path="meta/meta-yocto" remote="yoctoproject" revision="whinlatter" clone-depth="1"/>
+    <project name="meta-openembedded" path="meta/meta-openembedded" remote="oe" revision="whinlatter" clone-depth="1"/>
+    <project name="meta-raspberrypi" path="meta/meta-raspberrypi" remote="raspberrypi" revision="95f2cefa1f3b46c5bb5ad27ed0a2147725ea2210" clone-depth="1"/>
 
-    <project name="meta-openembedded" path="meta-openembedded" remote="oe" revision="master" clone-depth="1"/>
+    <!-- Additional layers -->
+    <project name="linux-rpi" path="sources/linux-rpi" remote="github.vnguyentrong" revision="rpi-6.12.y" clone-depth="1"/>
+    <project name="weston" path="sources/weston" remote="freedesktop.vnguyentrong" revision="main"/>
+    <!-- <project name="wayland-ivi-extension" path="wayland-ivi-extension" remote="github.vnguyentrong" revision="master"/> -->
+    <!-- <project name="gstreamer" path="gstreamer" remote="freedesktop.vnguyentrong" revision="main" clone-depth="1"/> -->
+    <!-- <project name="wayland" path="wayland" remote="freedesktop" revision="main"/> -->
 
-    <project name="linux-rpi" path="linux-rpi" remote="github.vnguyentrong" revision="rpi-6.6.y" clone-depth="1"/>
-    <project name="icode" path="icode" remote="github.vnguyentrong" revision="master.icode"/>
-    <project name="wayland-ivi-extension" path="wayland-ivi-extension" remote="github.vnguyentrong" revision="master"/>
-
-    <project name="wayland" path="wayland" remote="freedesktop" revision="main"/>
-
-    <project name="weston" path="weston" remote="freedesktop.vnguyentrong" revision="main"/>
-    <project name="gstreamer" path="gstreamer" remote="freedesktop.vnguyentrong" revision="main" clone-depth="1"/>
-
+    <!-- tools -->
+    <!-- <project name="icode" path="icode" remote="github.vnguyentrong" revision="master.icode"/> -->
 </manifest>
